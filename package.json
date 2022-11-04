@@ -1,0 +1,95 @@
+{
+	"name": "auto-log",
+	"displayName": "auto-log",
+	"description": "auto-log",
+	"version": "0.0.1",
+	"publisher": "jianting-wu",
+	"engines": {
+		"vscode": "^1.73.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:auto-log.insert",
+		"onCommand:auto-log.del",
+		"onCommand:auto-log.remove-comments"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "auto-log.insert",
+				"title": "Insert Log"
+			},
+			{
+				"command": "auto-log.del",
+				"title": "Del all Logs"
+			},
+			{
+				"command": "auto-log.remove-comments",
+				"title": "Remove all comments"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "auto-log.insert",
+				"key": "ctrl+w",
+				"mac": "cmd+shift+w",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "auto-log.del",
+				"key": "ctrl+r",
+				"mac": "cmd+shift+r",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "auto-log.remove-comments",
+				"key": "ctrl+t",
+				"mac": "cmd+shift+t",
+				"when": "editorFocus"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"when": "editorTextFocus",
+					"command": "auto-log.insert",
+					"group": "navigation"
+				},
+				{
+					"when": "editorTextFocus",
+					"command": "auto-log.del",
+					"group": "navigation"
+				},
+				{
+					"when": "editorFocus",
+					"command": "auto-log.remove-comments",
+					"group": "navigation"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.73.0",
+		"@types/glob": "^7.2.0",
+		"@types/mocha": "^9.1.1",
+		"@types/node": "16.x",
+		"@typescript-eslint/eslint-plugin": "^5.27.0",
+		"@typescript-eslint/parser": "^5.27.0",
+		"eslint": "^8.16.0",
+		"glob": "^8.0.3",
+		"mocha": "^10.0.0",
+		"typescript": "^4.7.2",
+		"@vscode/test-electron": "^2.1.3"
+	}
+}
