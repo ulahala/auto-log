@@ -2,7 +2,7 @@
 	"name": "auto-log",
 	"displayName": "auto-log",
 	"description": "auto-log",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "jianting-wu",
 	"engines": {
 		"vscode": "^1.73.0"

@@ -1,10 +1,10 @@
 # auto-log README
 
-该插件提供三项能力: 
+该插件提供三项能力:
 
 + 在编辑器中选中的内容下一行添加 console.log('content', content)
     命令行操作: Insert Log
-    快捷键: 
+    快捷键:
         win: ctrl+w
         mac: cmd+shift+w
 + 删除当前文件中所有的console
